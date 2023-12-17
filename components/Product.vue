@@ -1,18 +1,19 @@
 <template>
     <div class="w-full block">
-      <div class="product-thumbnail">
-        <img :src="product.thumbnail" :alt="product.title" />
-      </div>
-      <div class="product-content">
-        <h2 class="product-title">{{ product.title }}</h2>
-        <p class="product-description">{{ product.description }}</p>
-        <span class="product-price">{{ product.price }} ₺</span>
-        <div class="product-actions flex items-center">
-          <button @click="handleAddToCart(product)" class="btn btn--alt">
+      
+        <div class="product-thumbnail">
+          <NuxtLink :to="`/urun/${product.id}`">
+            <img class="cover" :src="product.thumbnail" :alt="product.title" />
+          </NuxtLink>
+          <button @click="handleAddToCart(product)" class="flex items-center justify-center">
+            <img src="/assets/images/shopping-cart.png" />
             Sepete Ekle
           </button>
-          <NuxtLink :to="`/urun/${product.id}`">İncele</NuxtLink>
         </div>
+      <div class="product-content">
+        <h2 class="product-title"> <NuxtLink :to="`/urun/${product.id}`">{{ product.title }}</NuxtLink></h2>
+        <p class="product-description">{{ product.description }}</p>
+        <span class="product-price">{{ product.price }} ₺</span>
       </div>
     </div>
   </template>

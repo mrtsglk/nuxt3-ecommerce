@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       },
     ],
     '@pinia-plugin-persistedstate/nuxt',
+    '@vueuse/nuxt',
   ],
   runtimeConfig: {
     public:{

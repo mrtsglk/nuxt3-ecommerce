@@ -3,15 +3,35 @@
 @import 'tailwindcss/utilities';
 
 body{
-    background:#f7f7f7;
     overflow-x:hidden;
 }
 
 header{
-    margin-bottom:50px;
+    border-bottom:1px solid #818B9C;
+    padding:27.5px 0;
+    .wrapper{
+        max-width:1200px;
+        gap:68px;
+    }
     ul{
+        gap:24px;
         li{
             position:relative;
+            cursor:pointer;
+            color: #233541;
+            text-align: center;
+            font-family: Geologica;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            letter-spacing: -0.2px;
+            .login-btn{
+                gap:4px;
+                border-radius: 8px;
+                border: 1px solid #233541;
+                padding:5.5px 9.5px;
+            }
         }
     }
 }
@@ -29,7 +49,7 @@ header{
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(17,24,39);
+    background-color: #fff;
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -38,10 +58,16 @@ header{
   }
   
   .dropdown-content a {
-    color: #fff;
     padding: 5px 16px;
     text-decoration: none;
     display: block;
+    color: #818B9C;
+    font-family: Geologica;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    text-align:left;
   }
   
   .dropdown:hover .dropdown-content {
@@ -60,33 +86,83 @@ footer{
     max-width:600px;
     margin-top:50px;
     label{
-        color:#fff;
+        color:#0B0F0E;
+        font-family: Geologica;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -0.2px;
     }
 }
 
 section#products{
+    margin-top:50px;
     h1{
         font-size:40px;
         margin-bottom:50px;
     }
     .wrapper{
+        max-width:1200px;
         .product-item{
-            border:1px solid #a0a19d;
-            border-radius:10px;
             overflow:hidden;
             .product-thumbnail{
                 width:100%;
                 height:200px;
                 overflow:hidden;
-                img{
+                position:relative;
+                .cover{
                     width:100%;
                     height:100%;
                     object-fit: cover;
                     object-position: center;
                 }
+                button{
+                    display:none;
+                }
+                &:before{
+                    content:"";
+                    opacity: 0.6;
+                    background: #233541;
+                    width:100%;
+                    height:100%;
+                    position:absolute;
+                    z-index:10;
+                    display:none;
+                }
+                &:hover{
+                    &::before{
+                        display:block;
+                    }
+                    button{
+                        display:block;
+                        position:absolute;
+                        border-radius: 8px;
+                        border: 1px solid #233541;
+                        background:  #FFF;
+                        position:absolute;
+                        inset:0;
+                        margin:auto;
+                        width: 200px;
+                        height:53px;
+                        z-index:11;
+                        color: #233541;
+                        text-align: center;
+                        font-family: Geologica;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 140%;
+                        letter-spacing: -0.2px;
+                        gap:4px;
+                        img{
+                            display:inline;
+                        }
+                    }
+                }
             }
             .product-content{
-                padding:15px;
+                padding:15px 0;
                 .product-title{
                     font-weight:bold;
                     font-size:18px;
@@ -131,4 +207,41 @@ section#products{
     display:flex;
     align-items: center;
     justify-content: center;
+}
+
+.breadcrumb{
+    background:  #F7F7F7;
+    padding-top:56px;
+    height:151px;
+    .wrapper{
+        max-width:1200px;
+        h1{
+            color: #0B0F0E;
+            font-family: Geologica;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 140%;
+            letter-spacing: -0.2px;
+        }
+    }
+}
+
+.payment-btn{
+    border-radius: 8px;
+    background: #233541;
+    color: #FFF;
+    text-align: center;
+    font-family: Geologica;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: -0.2px;
+    width: 100%;
+    height: 48px;
+}
+
+.mb-50{
+    margin-bottom:50px;
 }

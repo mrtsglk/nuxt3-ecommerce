@@ -1,5 +1,7 @@
+import type { Product } from '~/types'
+
 export const useCart = () => {
-    const items = useState("items", () => [] as CartItem[]);
+    const items = useLocalStorage("items", () => [] as CartItem[]);
   
     const addToCart = (product: Product) => {
       if (items.value.some((item) => item.product.id === product.id)) {

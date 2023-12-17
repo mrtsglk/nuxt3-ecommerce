@@ -1,27 +1,42 @@
 <template>
   <header class="w-full block">
-  <section class="relative mx-auto">
-    <nav class="flex justify-between bg-gray-900 text-white w-screen">
-      <div class="px-5 xl:px-12 py-6 flex w-full items-center">
+    <div class="container mx-auto">
+      <div class="wrapper flex items-center mx-auto">
         <nuxt-link class="text-3xl font-bold font-heading" to="/">
-          NuxtJS
+          <img src="/assets/images/logo.png">
         </nuxt-link>
-        <ul class="hidden md:flex px-4 font-semibold font-heading space-x-12 ml-auto">
+        <ul class="flex items-center">
           <li>
             <div class="dropdown">
-              <button class="dropbtn">Kategoriler</button>
+              KATEGORİLER
               <div class="dropdown-content">
-                <div v-for="category in categories"><nuxt-link class="hover:text-gray-200" :to="`/kategori/${category}`">{{ category }}</nuxt-link></div>
+                <div v-for="category in categories"><nuxt-link :to="`/kategori/${category}`">{{ category }}</nuxt-link></div>
               </div>
             </div>
           </li>
-          <li><nuxt-link class="hover:text-gray-200" to="/sepet">Sepetim</nuxt-link></li>
-          <li v-if="!authenticated"><nuxt-link class="hover:text-gray-200" to="/login">Üye Girişi</nuxt-link></li>
-          <li v-if="authenticated"><nuxt-link class="hover:text-gray-200" @click="logout">Çıkış Yap</nuxt-link></li>
+          <li>KAMPANYALAR</li>
+          <li>İLETİŞİM</li>
+        </ul>
+        <ul class="flex items-center ml-auto">
+          <li>
+            <nuxt-link><img src="/assets/images/search-icon.png"></nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/sepet"><img src="/assets/images/cart.png"></nuxt-link>
+          </li>
+          <li>
+            <nuxt-link class="login-btn flex items-center" to="/login" v-if="!authenticated">
+              <img src="/assets/images/login.png">
+              <span>Giriş Yap</span>
+            </nuxt-link>
+            <nuxt-link class="login-btn flex items-center" @click="logout" v-if="authenticated">
+              <img src="/assets/images/login.png">
+              <span>Çıkış Yap</span>
+            </nuxt-link>
+          </li>
         </ul>
       </div>
-    </nav>
-  </section>
+    </div>
   </header>
 </template>
 <script lang="ts" setup>

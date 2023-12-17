@@ -1,8 +1,14 @@
 <template>
+    <div class="breadcrumb">
+      <div class="container mx-auto">
+        <div class="wrapper mx-auto">
+          <h1>{{ route.params.id }}</h1>
+        </div>
+      </div>
+    </div>
     <section id="products" class="w-full block">
       <div class="container mx-auto">
-        <h1>{{ route.params.id }}</h1>
-        <div class="wrapper grid grid-cols-5 gap-8">
+        <div class="wrapper grid grid-cols-4 gap-8 mx-auto">
           <div
           v-for="product in products"
           :key="product.id"
@@ -17,6 +23,11 @@
   <script lang="ts" setup>
   const route = useRoute();
   const id = route.params.id;
+
+  useSeoMeta({
+    title: route.params.id+' | Nuxt 3 Ecommerce',
+    description: 'Açıklama alanı',
+  })
 
   interface ProductResponse {
     products: Product[];

@@ -1,9 +1,13 @@
 <template>
     <div>
-      <div class="title">
-        <h2>Üye Girişi</h2>
+      <div class="breadcrumb mb-50">
+      <div class="container mx-auto">
+        <div class="wrapper mx-auto">
+          <h1>Üye Girişi</h1>
+        </div>
       </div>
-      <div class="container form mx-auto login-box bg-gray-900">
+    </div>
+      <div class="container form mx-auto login-box">
         <label for="uname"><b>Kullanıcı Adı</b></label>
         <input
           v-model="user.username"
@@ -24,7 +28,7 @@
           required
         />
   
-        <button @click.prevent="login" class="button">Giriş Yap</button>
+        <button @click.prevent="login" class="payment-btn">Giriş Yap</button>
       </div>
     </div>
   </template>
